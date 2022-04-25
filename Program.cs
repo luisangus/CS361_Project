@@ -3,7 +3,7 @@
 // Author: Luis R Gonzalez
 // Date: 4/21/22
 // Description: The purpose of this microservice is to turn a file into an HTML table and 
-// email it.
+// email it. The user interface will ask the user for all the information.
 ///////////////////////////////////////////////////////////////////////////////////////////
 using System;
 using System.Collections.Generic;
@@ -158,14 +158,6 @@ namespace SendEmail
             message.IsBodyHtml = true;
             message.Subject = subject;
             message.Body = emailBody;
-            //AlternateView mainView;
-            //AlternateView plainView;
-
-            //plainView = AlternateView.CreateAlternateViewFromString("HTML Disabled", null, "text/plain");
-            //mainView = AlternateView.CreateAlternateViewFromString(emailBody, null, "text/html");
-
-            //message.AlternateViews.Add(mainView);
-            //message.AlternateViews.Add(plainView);
 
             mailClient.Timeout = 2000000;
             mailClient.Send(message);
